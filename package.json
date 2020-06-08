@@ -1,10 +1,10 @@
 {
-  "name": "@ehacke/simple-ts-di",
+  "name": "@ehacke/ts-di-starter",
   "description": "Node Typescript pattern with Dependency Injection",
   "version": "0.0.1",
   "author": "Eric Hacke",
   "bugs": {
-    "url": "https://github.com/ehacke/simple-ts-di/issues"
+    "url": "https://github.com/ehacke/ts-di-starter/issues"
   },
   "config": {
     "commitizen": {
@@ -70,7 +70,6 @@
     "@types/bluebird": "^3.5.32",
     "@types/chai-as-promised": "^7.1.2",
     "@types/expect": "^24.3.0",
-    "@types/express": "^4.17.5",
     "@types/fs-extra": "^9.0.1",
     "@types/ioredis": "^4.16.2",
     "@types/lodash": "^4.14.153",
@@ -110,7 +109,7 @@
     "dist/**/*.{js,ts,tsbuildinfo}",
     "docs/**/*.*"
   ],
-  "homepage": "https://github.com/ehacke/simple-ts-di#readme",
+  "homepage": "https://github.com/ehacke/ts-di-starter#readme",
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
@@ -139,7 +138,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ehacke/simple-ts-di.git"
+    "url": "git+https://github.com/ehacke/ts-di-starter.git"
   },
   "scripts": {
     "beta": "npm version prerelease",

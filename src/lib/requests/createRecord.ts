@@ -1,6 +1,6 @@
-import { enumError, ValidatedBase } from "validated-base";
-import { RECORD_TYPE } from "@/models/record";
-import { IsEnum, IsNumber, IsString } from "class-validator";
+import { enumError, ValidatedBase } from 'validated-base';
+import { RECORD_TYPE } from '@/models/record';
+import { IsEnum, IsNumber, IsString } from 'class-validator';
 
 interface CreateRecordInterface {
   type: RECORD_TYPE;

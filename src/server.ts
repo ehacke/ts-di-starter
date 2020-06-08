@@ -31,7 +31,7 @@ export class Server {
    * @param {object} serviceManager.clients
    * @param {object} serviceManager.controllers
    */
-  constructor(serviceManager) {
+  constructor(serviceManager: ServiceManager) {
     this.serviceManager = serviceManager;
     this.config = serviceManager.config;
 
@@ -48,8 +48,6 @@ export class Server {
    * @returns {Promise<void>}
    */
   async start(silent = false): Promise<void> {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     const logger = silent ? (...args): void => log.trace(...args) : (...args): void => log.info(...args);
 
     // eslint-disable-next-line no-magic-numbers
@@ -82,7 +80,6 @@ export class Server {
     }
 
     ExpressMiddleware.attach(this.app, expressMiddleware, expressControllers);
-
     SocketMiddleware.attach(this.io, socketMiddleware, socketControllers);
 
     // errors are usually caused by an invalid query string or url

@@ -19,9 +19,9 @@ const load = (): Config => {
     name: pjson.name.replace(/^@[\d-AZa-z-]+\//g, ''),
 
     redis: {
-      host: getenv('CACHE_REDIS_HOST'),
-      port: getenv.int('CACHE_REDIS_PORT'),
-      ttlSec: getenv.int('CACHE_REDIS_TTL_SEC'),
+      host: getenv('REDIS_HOST'),
+      port: getenv.int('REDIS_PORT'),
+      ttlSec: getenv.int('REDIS_TTL_SEC'),
     },
 
     apiHost: getenv('API_HOST'),
@@ -33,19 +33,6 @@ const load = (): Config => {
       serviceAccountPath: getenv('SERVICE_ACCOUNT_PATH'),
       pubsubEmulator: getenv('PUBSUB_EMULATOR_HOST', 'not-found') !== 'not-found',
     },
-
-    sendEmail: getenv.bool('SEND_EMAIL'),
-
-    sendNotifications: getenv.bool('SEND_NOTIFICATIONS'),
-
-    stripe: {
-      keyPath: getenv('STRIPE_KEY_PATH'),
-      webhookSecretPath: getenv('STRIPE_WEBHOOK_SECRET_PATH'),
-    },
-
-    notificationWebhook: getenv('NOTIFICATION_WEBHOOK'),
-
-    debugKey: getenv('DEBUG_KEY'),
   };
 
   return new Config(config);

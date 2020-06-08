@@ -74,6 +74,7 @@ export class Users {
 
   /**
    * User exists
+   *
    * @param {string} id
    * @returns {Promise<boolean>}
    */

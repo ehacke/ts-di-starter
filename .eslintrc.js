@@ -3,7 +3,9 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'import', 'simple-import-sort'],
   rules: {
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'unicorn/no-useless-undefined': 'off',
   },
   settings: {
     'import/resolver': {

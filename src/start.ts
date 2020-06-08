@@ -1,6 +1,7 @@
 /* eslint no-process-exit: "off" */
 import log from '@/logger';
 
+import Bluebird from 'bluebird';
 import * as app from './app';
 import ConfigLoader from './configLoader';
 import { Server } from './server';
@@ -25,5 +26,9 @@ const startingConfig = ConfigLoader.load();
     process.exit(1);
   });
 
+  // This is dumb, but sometimes everything starts before redis has connected
+  // Rather than tricking ioredis into connecting manually, easier to just wait a bit
+  // eslint-disable-next-line no-magic-numbers
+  await Bluebird.delay(500);
   await server.start();
 })();

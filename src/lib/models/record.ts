@@ -1,7 +1,8 @@
-import { enumError, ValidatedBase } from "validated-base";
-import { IsDate, IsEnum, IsNumber, IsString } from "class-validator";
+import { enumError, ValidatedBase } from 'validated-base';
+import { IsDate, IsEnum, IsNumber, IsString } from 'class-validator';
 import shorthash from 'shorthash';
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon';
+import { toDate } from 'simple-cached-firestore';
 
 export enum RECORD_TYPE {
   BIG_THING = 'bigThing',
@@ -32,8 +33,8 @@ export class Record extends ValidatedBase implements RecordInterface {
     this.userId = params.userId;
     this.value = params.value;
     this.type = params.type;
-    this.createdAt = params.createdAt;
-    this.updatedAt = params.updatedAt;
+    this.createdAt = toDate(params.createdAt);
+    this.updatedAt = toDate(params.updatedAt);
 
     if (validate) {
       this.validate();
@@ -60,17 +61,19 @@ export class Record extends ValidatedBase implements RecordInterface {
 
   /**
    * Generate ID for model based on userId, type and createdAt
+   *
    * @param {string} userId
    * @param {RECORD_TYPE} type
    * @param {Date} createdAt
    * @returns {string}
    */
   static generateId(userId: string, type: RECORD_TYPE, createdAt: Date): string {
-    return shorthash.unique(userId + type + createdAt.toISOString())
+    return shorthash.unique(userId + type + createdAt.toISOString());
   }
 
   /**
    * Create instance of model
+   *
    * @param {string} userId
    * @param {number} value
    * @param {RECORD_TYPE} type

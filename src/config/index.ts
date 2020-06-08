@@ -73,33 +73,6 @@ class RedisConfig extends ValidatedBase implements RedisConfigInterface {
   ttlSec: number;
 }
 
-interface StripeInterface {
-  keyPath: string;
-  webhookSecretPath: string;
-}
-
-/**
- * @class
- */
-class Stripe extends ValidatedBase implements StripeInterface {
-  constructor(params: StripeInterface, validate = true) {
-    super();
-
-    this.keyPath = params.keyPath;
-    this.webhookSecretPath = params.webhookSecretPath;
-
-    if (validate) {
-      this.validate();
-    }
-  }
-
-  @IsString()
-  keyPath: string;
-
-  @IsString()
-  webhookSecretPath: string;
-}
-
 export interface ConfigInterface {
   port: number;
   name: string;
@@ -108,11 +81,6 @@ export interface ConfigInterface {
   redis: RedisConfigInterface;
   apiHost: string;
   appHost: string;
-  sendEmail: boolean;
-  sendNotifications: boolean;
-  stripe: StripeInterface;
-  notificationWebhook: string;
-  debugKey: string;
 }
 
 /**
@@ -129,11 +97,6 @@ export class Config extends ValidatedBase implements ConfigInterface {
     this.redis = new RedisConfig(params.redis, false);
     this.apiHost = params.apiHost;
     this.appHost = params.appHost;
-    this.sendEmail = params.sendEmail;
-    this.sendNotifications = params.sendNotifications;
-    this.stripe = new Stripe(params.stripe);
-    this.notificationWebhook = params.notificationWebhook;
-    this.debugKey = params.debugKey;
 
     if (validate) {
       this.validate();
@@ -157,29 +120,11 @@ export class Config extends ValidatedBase implements ConfigInterface {
   @ValidateNested()
   gcp: GcpConfigInterface;
 
-  /* eslint-disable @typescript-eslint/camelcase */
   @IsUrl({ require_tld: false }) // This allows localhost urls
   appHost: string;
 
   @IsUrl({ require_tld: false }) // This allows localhost urls
   apiHost: string;
-  /* eslint-enable @typescript-eslint/camelcase */
-
-  @IsBoolean()
-  sendEmail: boolean;
-
-  @IsBoolean()
-  sendNotifications: boolean;
-
-  @IsInstance(Stripe)
-  @ValidateNested()
-  stripe: StripeInterface;
-
-  @IsString()
-  notificationWebhook: string;
-
-  @IsString()
-  debugKey: string;
 }
 
 /* eslint-enable require-jsdoc */
