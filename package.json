@@ -159,7 +159,7 @@
     "prepare": "fixpack",
     "prepublishOnly": "npm run build",
     "test": "npm run test-all && npm run lint",
-    "test-all": "TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true nyc mocha -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.unit.+(ts|js)\" \"tests/**/*.it.+(ts|js)\"",
+    "test-all": "TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true nyc mocha -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.+(unit|ts).+(ts|js)\"",
     "test-build": "node -r dotenv/config dist/start.js dotenv_config_path=.env.local",
     "unit": "TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true nyc mocha --recursive -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.unit.+(ts|js)\""
   }
