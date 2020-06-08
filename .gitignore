@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Envfiles
+.env.*
+.env
+scratch.*

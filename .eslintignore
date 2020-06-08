@@ -1,0 +1,7 @@
+tests/.eslintrc.js
+scratch.*
+tests/lib/integrationAdapters/**/*.internet.js
+coverage/**
+dist/**
+tsconfig-paths-bootstrap.js
+webpack.config.js

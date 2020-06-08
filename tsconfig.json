@@ -1,0 +1,106 @@
+{
+  "include": [
+    "src/**/*",
+    "types"
+  ],
+  "exclude": [
+    "node_modules",
+    "./coverage",
+    "./scratch.*"
+  ],
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es2018",
+    "lib": [
+      "es5",
+      "es6",
+      "dom",
+      "es2015.core",
+      "es2015.collection",
+      "es2015.generator",
+      "es2015.iterable",
+      "es2015.promise",
+      "es2015.proxy",
+      "es2015.reflect",
+      "es2015.symbol",
+      "es2015.symbol.wellknown",
+      "esnext.asynciterable",
+      "dom.iterable",
+      "scripthost",
+      "esnext",
+      "esnext.asynciterable",
+      "es2018",
+      "esnext.bigint"
+    ],
+    "module": "commonjs",
+    "allowJs": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "allowSyntheticDefaultImports": true,
+
+    "paths": {
+      "@/serviceManager": [
+        "src/app/serviceManager"
+      ],
+      "@/api": [
+        "src/app/api"
+      ],
+      "@/config": [
+        "src/config"
+      ],
+      "@/lib/*": [
+        "src/lib/*"
+      ],
+      "@/logger": [
+        "src/logger.ts"
+      ],
+      "@/express": [
+        "src/lib/express"
+      ],
+      "@/express/*": [
+        "src/lib/express/*"
+      ],
+      "@/socket": [
+        "src/lib/socket"
+      ],
+      "@/socket/*": [
+        "src/lib/socket/*"
+      ],
+      "@/models/*": [
+        "src/lib/models/*"
+      ],
+      "@/requests/*": [
+        "src/lib/requests/*"
+      ],
+      "@/dals/*": [
+        "src/lib/dals/*"
+      ],
+      "@/services/*": [
+        "src/lib/services/*"
+      ],
+      "@/clients/*": [
+        "src/lib/clients/*"
+      ]
+    }
+  }
+}

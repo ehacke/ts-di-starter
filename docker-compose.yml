@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  firestore:
+    image: ehacke/firestore-emulator:latest
+    environment:
+      - FIRESTORE_PROJECT_ID=project-test
+      - FIRESTORE_LISTEN_ADDRESS=0.0.0.0:8080
+    ports:
+      - "8080:8080"
+    command: "--no-store-on-disk --consistency=1.0"
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
