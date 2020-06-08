@@ -1,0 +1,9 @@
+/tests
+scratch.*
+/scripts
+/src
+.env*
+.nyc_output
+.idea
+/coverage
+/node_modules
