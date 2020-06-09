@@ -7,8 +7,8 @@ import SocketIO from 'socket.io';
 
 import log from '@/logger';
 
+import { ConfigInterface } from '@/config';
 import { ExpressMiddleware, ServiceManager, SocketMiddleware } from './app';
-import { ConfigInterface } from './config';
 
 /**
  * @class

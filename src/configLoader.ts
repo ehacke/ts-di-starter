@@ -1,8 +1,8 @@
 /* eslint no-process-env: "off" */
 import getenv from 'getenv';
 
+import { Config } from '@/config';
 import pjson from '../package.json';
-import { Config } from './config';
 
 const getOptionalProcessEnv = (name): string | undefined => {
   try {
@@ -23,9 +23,6 @@ const load = (): Config => {
       port: getenv.int('REDIS_PORT'),
       ttlSec: getenv.int('REDIS_TTL_SEC'),
     },
-
-    apiHost: getenv('API_HOST'),
-    appHost: getenv('APP_HOST'),
 
     gcp: {
       databaseURL: getOptionalProcessEnv('DATABASE_URL'),
