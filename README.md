@@ -72,40 +72,9 @@ The one exception to this is the express controllers and middleware classes. The
 
 I did this because otherwise you'll have a ton of boilerplate in every single controller to individually handle responses.
 
-# Components
+## Explore
 
-## Services
-
-Services all follow the same signature which you can see examples of in the `services/` folder. 
-
-```typescript
-interface ServicesInterface {
-  auth: admin.auth.Auth;
-}
-
-interface ConfigInterface {
-  ttlSec: number;
-}
-
-/**
- * @class
- */
-export class Users {
-
-  private readonly services: ServicesInterface;
-
-  private readonly config: ConfigInterface;
-
-  /**
-   * @param {ServicesInterface} services
-   * @param {ConfigInterface} config
-   */
-  constructor(services: ServicesInterface, config: ConfigInterface) {
-    this.services = services;
-    this.config = config;
-  }
-}
-```
+Most of the structure has examples and tests. Have a look.
 
 
 
