@@ -1,10 +1,5 @@
 # ts-di-starter
 
-![install size](https://badgen.net/packagephobia/install/simple-cached-firestore)
-![Codecov](https://img.shields.io/codecov/c/gh/ehacke/simple-cached-firestore)
-![CircleCI](https://img.shields.io/circleci/build/github/ehacke/simple-cached-firestore)
-![GitHub](https://img.shields.io/github/license/ehacke/simple-cached-firestore)
-
 Node Typescript API template with Dependency Injection
 
 > You don't need a framework, just a pattern
