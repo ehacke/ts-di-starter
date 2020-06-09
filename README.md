@@ -1,7 +1,19 @@
 # ts-di-starter
+
+![install size](https://badgen.net/packagephobia/install/simple-cached-firestore)
+![Codecov](https://img.shields.io/codecov/c/gh/ehacke/simple-cached-firestore)
+![CircleCI](https://img.shields.io/circleci/build/github/ehacke/simple-cached-firestore)
+![GitHub](https://img.shields.io/github/license/ehacke/simple-cached-firestore)
+
 Node Typescript API template with Dependency Injection
 
 > You don't need a framework, just a pattern
+
+## Sponsor 
+
+![asserted.io](https://raw.githubusercontent.com/ehacke/simple-cached-firestore/master/images/logo.png)
+
+[Test in Prod](https://asserted.io)
 
 ## Features
 
@@ -74,7 +86,7 @@ I did this because otherwise you'll have a ton of boilerplate in every single co
 
 ## Explore
 
-Most of the structure has examples and tests. Have a look.
+Most of the structure has examples and tests. Have a look. Or check out the [blog post](https://asserted.io/posts/node-typescript-api-template-with-dependency-injection) for a quick summary.
 
 
 
