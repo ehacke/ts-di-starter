@@ -1,5 +1,5 @@
 import { ValidatedBase } from 'validated-base';
-import { IsBoolean, IsInstance, IsNumber, IsOptional, IsString, IsUrl, ValidateNested } from 'class-validator';
+import { IsBoolean, IsInstance, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 /* eslint-disable require-jsdoc */
 
@@ -79,8 +79,6 @@ export interface ConfigInterface {
   version: string;
   gcp: GcpConfigInterface;
   redis: RedisConfigInterface;
-  apiHost: string;
-  appHost: string;
 }
 
 /**
@@ -95,8 +93,6 @@ export class Config extends ValidatedBase implements ConfigInterface {
     this.name = params.name;
     this.version = params.version;
     this.redis = new RedisConfig(params.redis, false);
-    this.apiHost = params.apiHost;
-    this.appHost = params.appHost;
 
     if (validate) {
       this.validate();
@@ -119,12 +115,6 @@ export class Config extends ValidatedBase implements ConfigInterface {
   @IsInstance(GcpConfig)
   @ValidateNested()
   gcp: GcpConfigInterface;
-
-  @IsUrl({ require_tld: false }) // This allows localhost urls
-  appHost: string;
-
-  @IsUrl({ require_tld: false }) // This allows localhost urls
-  apiHost: string;
 }
 
 /* eslint-enable require-jsdoc */
