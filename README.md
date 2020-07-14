@@ -10,6 +10,8 @@ Node Typescript API template with Dependency Injection
 
 [Test in Prod](https://asserted.io)
 
+Blog post on [building dependency-injected typescript APIs](https://asserted.io/posts/node-typescript-api-template-with-dependency-injection)
+
 ## Features
 
 - Dependency Injected Everything so everything is modular and unit testable
